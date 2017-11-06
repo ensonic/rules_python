@@ -63,6 +63,7 @@ def determine_possible_extras(whls):
   # TODO(mattmoor): Consider memoizing if this recursion ever becomes
   # expensive enough to warrant it.
   def is_possible(distro, extra):
+    distro = distro.replace("-", "_")
     # If we don't have the .whl at all, then this isn't possible.
     if distro not in whl_map:
       return False
