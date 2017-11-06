@@ -126,12 +126,12 @@ def main():
                   for extra in possible_extras.get(wheel, [])
                 ]))
 
-  whl_targets = ','.join([
-    ','.join([
-      '"%s": "@%s//:pkg"' % (whl.distribution().lower(), whl.repository_name())
+  whl_targets = '\n'.join([
+    '\n'.join([
+      '  "%s": "@%s//:pkg",' % (whl.distribution().lower(), whl.repository_name())
     ] + [
       # For every extra that is possible from this requirements.txt
-      '"%s[%s]": "@%s//:%s"' % (whl.distribution().lower(), extra.lower(),
+      '  "%s[%s]": "@%s//:%s",' % (whl.distribution().lower(), extra.lower(),
                                 whl.repository_name(), extra)
       for extra in possible_extras.get(whl, [])
     ])
@@ -150,7 +150,7 @@ def pip_install():
   {whl_libraries}
 
 _requirements = {{
-  {mappings}
+{mappings}
 }}
 
 all_requirements = _requirements.values()
