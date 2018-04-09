@@ -75,6 +75,24 @@ http_file(
 )
 
 http_file(
+    name = "futures_2_2_0_whl",
+    sha256 = "9fd22b354a4c4755ad8c7d161d93f5026aca4cfe999bd2e53168f14765c02cd6",
+    # From https://pypi.python.org/pypi/futures/2.2.0
+    url = ("https://pypi.python.org/packages/d7/1d/" +
+           "68874943aa37cf1c483fc61def813188473596043158faa6511c04a038b4/" +
+           "futures-2.2.0-py2.py3-none-any.whl"),
+)
+
+http_file(
+    name = "wheel_0_31_1_whl",
+    sha256 = "80044e51ec5bbf6c894ba0bc48d26a8c20a9ba629f4ca19ea26ecfcf87685f5f",
+    # From https://pypi.org/project/wheel/
+    url = ("https://files.pythonhosted.org/packages/81/30/" +
+           "e935244ca6165187ae8be876b6316ae201b71485538ffac1d718843025a9/" +
+           "wheel-0.31.1-py2.py3-none-any.whl"),
+)
+
+http_file(
     name = "mock_whl",
     sha256 = "5ce3c71c5545b472da17b72268978914d0252980348636840bd34a00b5cc96c1",
     # From https://pypi.python.org/pypi/mock
